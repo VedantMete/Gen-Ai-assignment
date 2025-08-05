@@ -5,3 +5,9 @@ Create a Spring Boot Maven project with dependencies: **Spring Web**, **Spring D
 
 # Prompt 2
 Add a feature that allows users to add products to their cart and complete a dummy purchase transaction for those products
+
+# Prompt 3 - For Frontend
+I have developed a Spring Boot backend with a MySQL database. I will provide the HTTP methods, endpoint URLs, response examples, request bodies, and descriptions. I want you to create an Angular-based e-commerce frontend for this backend with the following features:
+* A responsive navbar containing Login and Register buttons, which navigate to their respective pages.
+* A homepage that displays all available products.
+* Functionality to add products to the cart and checkout.
