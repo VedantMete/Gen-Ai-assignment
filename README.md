@@ -11,3 +11,77 @@ I have developed a Spring Boot backend with a MySQL database. I will provide the
 * A responsive navbar containing Login and Register buttons, which navigate to their respective pages.
 * A homepage that displays all available products.
 * Functionality to add products to the cart and checkout.
+1) GET -  http://localhost:8080/api/products
+response example - [
+    {
+        "id": 1,
+        "name": "Example Product",
+        "description": "This is a test product",
+        "price": 99.99,
+        "quantity": 6
+    },
+    {
+        "id": 2,
+        "name": "Example",
+        "description": "test",
+        "price": 299.99,
+        "quantity": 3
+    },
+    {
+        "id": 3,
+        "name": "Product",
+        "description": "product",
+        "price": 9.99,
+        "quantity": 9
+    }
+]
+on this endpoint all products should be displayed without any authentication
+
+
+2) POST - http://localhost:8080/api/auth/register
+request body/input - {
+    "username": "user9",
+    "email":"assdad@gmail.com",
+    "password": "test"
+}
+
+response example - User registered successfully!
+This endpoint is responsible for users to register, it takes input as username, email, password
+
+
+3) POST - http://localhost:8080/api/auth/login
+request body/input - {
+    "username": "user9",
+    "password": "test"
+}
+
+response example - {
+    "token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyOSIsImlhdCI6MTc1NDM2ODg0OCwiZXhwIjoxNzU0NDU1MjQ4fQ.aJCIJfa6eDg5dUeieTAhyBnKtDrDJIybw0FBP_FQNeMP4yBXkNdMQXGkE0gFyfZp",
+    "type": "Bearer",
+    "id": 6,
+    "username": "user9",
+    "email": "assdad@gmail.com"
+}
+This endpoint is responsible for users to login, it takes input as username and password and generates a bearer token 
+
+
+4) POST - http://localhost:8080/api/cart/add/2?quantity=2
+response example - {
+    "id": 4,
+    "items": [
+        {
+            "productId": 2,
+            "quantity": 2,
+            "price": 299.99,
+            "productName": "Example"
+        }
+    ],
+    "total": 599.98
+}
+This endpoint is responsible for adding a product to the cart so and its syntax is like this, where it takes productid and quantity in url itself, also bearer token(generated during login) is required to perform this request 
+http://localhost:8080/api/cart/add/{productId}?{quantity}=2
+
+
+5) POST - http://localhost:8080/api/cart/checkout
+response example - Checkout successful
+This endpoint is responsible to simulate a dummy checkout, response message should pop up after clicking on a "checkout" button 
