@@ -89,8 +89,7 @@ http://localhost:8080/api/cart/add/{productId}?{quantity}=2
 response example - Checkout successful
 This endpoint is responsible to simulate a dummy checkout, response message should pop up after clicking on a "checkout" button 
 
-6) 
-Payment - 
+6) Payment - 
 Add Products to Cart
 POST http://localhost:8080/api/cart/add/1?quantity=2
 Authorization: Bearer YOUR_JWT_TOKEN_HERE
